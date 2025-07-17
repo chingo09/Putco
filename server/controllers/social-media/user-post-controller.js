@@ -1,4 +1,4 @@
-const Notification = require("../../models/notification");
+const Notification = require("../../models/Notification");
 const Post = require("../../models/user-post");
 const User = require("../../models/User");
 const { v2: cloudinary } = require("cloudinary");

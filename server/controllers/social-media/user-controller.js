@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 const { v2: cloudinary } = require("cloudinary");
-const Notification = require("../../models/notification");
+const Notification = require("../../models/Notification");
 const User = require("../../models/User");
 
 const getUserProfile = async (req, res) => {
