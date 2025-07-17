@@ -37,7 +37,7 @@ const CLIENT_PORT_ALT = process.env.CLIENT_PORT_ALT || 5174;
 
 // CORS configuration
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174'],
+  origin: ['http://localhost:5173', 'http://localhost:5174','https://putco-delta.vercel.app'],
   credentials: true
 }));
 
