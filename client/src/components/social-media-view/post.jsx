@@ -21,7 +21,7 @@ const Post = ({ post }) => {
   const { mutate: deletePost, isPending: isDeleting } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch(`http://localhost:5300/api/social-media/post/${post?._id}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/social-media/post/${post?._id}`, {
           method: "DELETE",
         });
         const data = await res.json();
@@ -42,7 +42,7 @@ const Post = ({ post }) => {
   const { mutate: likePost, isPending: isLiking } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch(`http://localhost:5300/api/social-media/post/like/${post?._id}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/social-media/post/like/${post?._id}`, {
           method: "POST",
         });
         const data = await res.json();
@@ -72,7 +72,7 @@ const Post = ({ post }) => {
   const { mutate: commentPost, isPending: isCommenting } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch(`http://localhost:5300/api/social-media/post/comment/${post?._id}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/social-media/post/comment/${post?._id}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const RightPanel = () => {
     queryKey: ["suggestedUsers"],
     queryFn: async () => {
       try {
-        const res = await fetch("http://localhost:5300/api/social-media/user/suggested");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/social-media/user/suggested`);
         const data = await res.json();
         if (!res.ok) {
           throw new Error(data.error || "Something went wrong!");
@@ -27,7 +27,7 @@ const RightPanel = () => {
     queryKey: ["followingUsers"],
     queryFn: async () => {
       try {
-        const res = await fetch("http://localhost:5300/api/social-media/user/following");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}`/social-media/user/following);
         const data = await res.json();
         if (!res.ok) {
           throw new Error(data.error || "Something went wrong!");

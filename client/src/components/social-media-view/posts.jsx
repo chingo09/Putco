@@ -7,15 +7,15 @@ const Posts = ({ feedType, username, userId }) => {
 	const getPostEndpoint = () => {
 		switch (feedType) {
 			case "forYou":
-				return "http://localhost:5300/api/social-media/post/all";
+				return `${import.meta.env.VITE_API_URL}/social-media/post/all`;
 			case "following":
-				return "http://localhost:5300/api/social-media/post/following";
+				return `${import.meta.env.VITE_API_URL}/social-media/post/following`;
 			case "posts":
-				return `http://localhost:5300/api/social-media/post/user/${username}`;
+				return `${import.meta.env.VITE_API_URL}/social-media/post/user/${username}`;
 			case "likes":
-				return `http://localhost:5300/api/social-media/post/likes/${userId}`;
+				return `${import.meta.env.VITE_API_URL}/social-media/post/likes/${userId}`;
 			default:
-				return "http://localhost:5300/api/social-media/post/all";
+				return `${import.meta.env.VITE_API_URL}/social-media/post/all`;
 		}
 	};
 
