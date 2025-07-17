@@ -74,6 +74,15 @@ app.use("/api/social-media/notification", notificationRouter);
 
 app.use("/api/common/feature", commonFeatureRouter);
 
+app.get("/", (req, res) => {
+  res.send("PUTCO backend is running 🚀");
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({ status: "OK", message: "PUTCO backend is healthy ✅" });
+});
+
+
 // Start server
 const server = app.listen(PORT, () => {
   console.log(`Server is now running on port ${PORT}`);
