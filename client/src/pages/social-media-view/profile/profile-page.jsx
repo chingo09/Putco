@@ -38,7 +38,7 @@ const ProfilePage = () => {
 		queryKey: ["userProfile"],
 		queryFn: async () => {
 			try {
-				const res = await fetch(`http://localhost:5300/api/social-media/user/profile/${username}`);
+				const res = await fetch(`${import.meta.env.VITE_API_URL}/social-media/user/profile/${username}`);
 				const data = await res.json();
 				if (!res.ok) {
 					throw new Error(data.error || "Something went wrong");

@@ -9,7 +9,7 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
 export const getAllCustomLocations = async () => {
   try {
     console.log('Fetching custom locations from:', `${API_BASE_URL}/api/admin/newLocations`);
-    const response = await axios.get(`${API_BASE_URL}/api/admin/newLocations`, {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/admin/newLocations`, {
       withCredentials: true
     });
     console.log('Response received:', response.data);
@@ -25,7 +25,7 @@ export const getAllCustomLocations = async () => {
 export const addCustomLocation = async (locationData) => {
   try {
     console.log('Adding custom location: ', locationData);
-    const response = await axios.post(`${API_BASE_URL}/api/admin/newLocations`, locationData, {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/admin/newLocations`, locationData, {
       withCredentials: true,
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -44,7 +44,7 @@ export const addCustomLocation = async (locationData) => {
 export const deleteCustomLocation = async (locationId) => {
   try {
     console.log('Deleting location with ID:', locationId);
-    const response = await axios.delete(`${API_BASE_URL}/api/admin/newLocations/${locationId}`, {
+    const response = await axios.delete(`${import.meta.env.VITE_API_URL}/admin/newLocations/${locationId}`, {
       withCredentials: true
     });
     console.log('Delete response:', response.data);

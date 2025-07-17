@@ -20,7 +20,7 @@ const CreatePost = () => {
   } = useMutation({
     mutationFn: async ({ text, img }) => {
       try {
-        const res = await fetch("http://localhost:5300/api/social-media/post/create", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/social-media/post/create`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
